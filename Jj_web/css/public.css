@@ -1,0 +1,221 @@
+@charset 'utf8';
+.top {
+	width: 100%;
+	height: 30px;
+	background: gainsboro;
+	line-height: 30px;
+}
+
+.top_nav {
+	width: 1200px;
+	height: 100%;
+	margin: auto;
+}
+
+.Time {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.Friendship_link {
+	width: 50%;
+	height: 100%;
+	float: right;
+	text-align: right;
+}
+
+.Friendship_link ul {
+	list-style: none;
+	float: right;
+}
+
+.Friendship_link ul li {
+	float: left;
+	width: auto;
+	height: 100%;
+	padding: 0px 10px;
+}
+
+.Friendship_link ul li a {
+	display: block;
+	height: 30px;
+	text-decoration: none;
+	color: black;
+	position: relative;
+}
+
+.Friendship_link ul li a:hover {
+	color: #0d54b4;
+}
+
+.Friendship_link ul li a::after {
+	content: "";
+	width: 1px;
+	height: 15px;
+	background: black;
+	position: absolute;
+	top: 8px;
+	right: -6px;
+}
+
+.Friendship_link ul li:last-child a::after {
+	display: none;
+}
+
+.nav_box {
+	width: 100%;
+	height: auto;
+	background: #0d54b4;
+	line-height: 150px;
+}
+
+.nav_logo {
+	background: #0d54b4;
+	padding: 0px;
+}
+
+.nav_logo>div {
+	padding: 0px;
+}
+
+.logo_img img {
+	width: 100%;
+}
+
+.sreach_box {
+	width: 100%;
+	height: 36px;
+	text-align: right;
+	margin-top: 60px;
+}
+
+.sreach_box a {
+	display: block;
+	width: 36px;
+	height: 36px;
+	float: right;
+	background: url(../img/search.png) no-repeat;
+	background-size: 100% auto;
+	cursor: pointer;
+}
+
+.sreach_box input {
+	height: 100%;
+	width: 60%;
+	float: right;
+	border: none;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+
+.nav_list {
+	width: 100%;
+	height: auto;
+	background: #054294;
+}
+
+.nav_list>div {
+	padding: 0px;
+}
+
+
+/*导航栏部分*/
+
+.nav>li>a {
+	padding: 10px 18px;
+	font-size: 16px;
+	color: white !important;
+}
+
+.footer {
+	width: 100%;
+	height: auto;
+	background: #054294;
+	margin-top: 60px;
+}
+
+.footer_box>div {
+	line-height: 100px;
+	padding: 0;
+}
+
+.footer_box>div p {
+	margin-bottom: 0px;
+	font-size: 14px;
+	color: white;
+}
+
+.footer_box>div p a {
+	color: white;
+}
+
+.weixin_weibo,
+.weixin_weibo {
+	line-height: 46px;
+	display: inline-block;
+	padding-left: 40px;
+	margin-right: 20px;
+}
+
+.weixin_weibo {
+	background: url(../img/xl.png) no-repeat left;
+}
+
+.wx {
+	position: relative;
+	background: url(../img/wx.png) no-repeat left;
+}
+
+.wx span{
+	display: block;
+	position: absolute;
+	top: -80px;
+	right: -50px;
+	width: 80px;
+	height: 80px;
+	transform: scale(0);
+	transition: 0.5s;
+}
+
+.wx:hover{
+	transform: scale(1);
+}
+
+.wx span img{
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+	.top {
+		display: none;
+	}
+	.nav_box {
+		line-height: 56px;
+	}
+	.right_box {
+		display: none;
+	}
+	.footer_box>div {
+		line-height: 36px;
+	}
+	.footer_box>div p {
+		margin-bottom: 0px;
+		font-size: 10px;
+		color: white;
+	}
+	.weixin_weibo,
+	.weixin_weibo {
+		margin-right: 10px;
+	}
+	.footer {
+		margin-top: 30px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	.top {
+		display: none;
+	}
+}
