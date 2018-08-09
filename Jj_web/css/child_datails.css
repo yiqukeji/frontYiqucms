@@ -1,4 +1,9 @@
 @charset "utf-8";
+
+body,html{
+	font-family: "方正仿宋";
+}
+
 .child {
 	padding: 0px;
 	margin-top: 60px;
@@ -19,12 +24,12 @@
 	margin-bottom: 0px;
 }
 
-.address{
+.address {
 	width: 100%;
 	height: auto;
 }
 
-.address p{
+.address p {
 	width: 100%;
 	height: auto;
 	line-height: 46px;
@@ -32,7 +37,7 @@
 	border-bottom: 1px solid gainsboro;
 }
 
-.content_datails h2{
+.content_datails h2 {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -41,29 +46,49 @@
 	line-height: 46px;
 }
 
-.content_datails>p{
+.content_datails>p {
 	width: 100%;
 	height: auto;
 	text-align: center;
 	line-height: 30px;
 }
 
-.font_datails *{
+.font_datails * {
 	text-indent: 32px;
 	text-align: justify;
 	text-justify: inter-ideograph;
 	font-size: 14px;
 }
 
-.font_datails img{
+.font_datails img {
 	display: block;
 	margin: 20px auto;
 	max-width: 90%;
 	height: auto;
 }
 
+/*最新消息列表*/
+.News_list {
+	width: 90%;
+	height: auto;
+}
+
+.News_list .list-group-item a {
+	color: black;
+	display: inline-block;
+	width: 60%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.News_list .list-group-item span {
+	color: black;
+	float: right;
+}
+
 @media only screen and (min-width: 100px) and (max-width: 768px) {
-	.content_datails h2{
+	.content_datails h2 {
 		line-height: 30px;
 	}
 }
