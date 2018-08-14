@@ -177,8 +177,6 @@
 }
 
 .list_box{
-	max-height: 770px;
-	overflow: hidden;
 	padding-top: 20px;
 	margin-bottom: 30px;
 }

@@ -46,6 +46,14 @@
 	padding: 0 10px;
 }
 
+.text-des p{
+	display: block;
+	width: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
 .text-des {
 	position: absolute;
 	height: 50px;
@@ -86,12 +94,12 @@
 @media only screen and (min-width: 100px) and (max-width: 768px) {
 	.slideBox .bd img {
 		width: 100%;
-		height: auto;
+		max-height: 150px;
 		display: block;
 	}
 	.slideBox {
 		width: 100%;
-		height: auto;
+		max-height: 150px;
 		overflow: hidden;
 		position: relative;
 		border: 1px solid #ddd;

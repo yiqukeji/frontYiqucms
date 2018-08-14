@@ -28,6 +28,10 @@
 	background: #054294;
 }
 
+.djtx_box>div{
+	padding: 0;
+}
+
 .djtx_box .xueyuan_news p::before {
 	content: "";
 	width: 100px;
