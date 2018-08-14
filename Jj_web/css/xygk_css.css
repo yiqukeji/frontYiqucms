@@ -5,7 +5,7 @@
 }
 
 .title_box {
-	width: 90%;
+	width: 100%;
 	height: 66px;
 	background: #054294;
 	text-align: center;
@@ -240,6 +240,28 @@
 
 /*分页样式结束*/
 
+
+/*最新消息列表*/
+.News_list {
+	width: 100%;
+	height: auto;
+}
+
+.News_list .list-group-item a {
+	color: black;
+	display: inline-block;
+	width: 60%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.News_list .list-group-item span {
+	color: black;
+	float: right;
+}
+
+/*最新消息列表样式结束*/
 
 @media only screen and (min-width: 100px) and (max-width: 768px) {
 	.child{
