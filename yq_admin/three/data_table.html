@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/font.css" />
+		<link rel="stylesheet" href="../css/xadmin.css" />
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../lib/layui/layui.js"></script>
+		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
+		<script type="text/javascript" src="../js/xadmin.js"></script>
+		<link rel="stylesheet" href="../css/table.css" />
+
+		<link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" />
+		<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+
+		<title>系统管理-数据字典(数据列表)</title>
+	</head>
+
+	<body>
+
+		<div class="container" style="height: 30px;background-color:gainsboro;">
+			<blockquote class="layui-elem-quote shouye">
+				<a>首页&emsp;<span>/&emsp;权限管理</span><span>&emsp;/&emsp;菜单管理</span></a>
+			</blockquote>
+		</div>
+
+		<div class="left-nav" style="width:200px;top: 30px;bottom: 0px;border-left: none;">
+			<div id="side-nav">
+				<div style="width:200px;height:auto;">
+					<div>
+						<ul class="ztree" id="treeDemo">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page-content" style="left:200px;top: 30px;bottom: 0px;">
+			<div class="layui-tab-content" style="top: 0px;bottom: 0px;">
+				<div class="layui-tab-item layui-show">
+					<iframe src='../three/date-list.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//用于展现 zTree 的 DOM 容器
+			var zTreeObj;
+			// zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+			var setting = {
+				async: {
+					enable: true, //开启异步加载模式
+					contentType: 'application/json', //ajax提交的数据类型格式
+					type: 'post', //数据提交的方式
+					dataType: 'text', //返回的数据类型
+					url: 'tree_data.json'
+				},
+				//树形图动作  
+				view: {
+					expandSpeed: "fast", //节点展开的速度  
+					selectedMulti: false, //设置是否允许同时选中多个节点。
+				},
+				//回调函数的设置  
+				callback: {
+					onClick: onClick, //点击事件，当点击当前节点，做的事情。
+					onClick: zTreeOnClick, //点击事件，当点击当前节点，做的事情。
+				}
+			};
+			// zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+			//异步添加节点可以设置为null
+			var zNodes = [{
+				name: "栏目",
+				id: 0,
+				title: "树形菜单",
+				children: [{
+					name: "一级菜单1",
+					children: [{
+						name: "一级菜单1.1"
+					}, {
+						name: "一级菜单1.2"
+					}]
+				}, {
+					name: "一级菜单2"
+				}]
+			}, {
+				name: "职务",
+				id: 1,
+				children: [{
+					name: "二级菜单1"
+				}, {
+					name: "二级菜单2"
+				}]
+			}, {
+				name: "地区",
+				id: 2,
+				children: [{
+					name: "三级菜单1"
+				}, {
+					name: "三级菜单2"
+				}]
+			}];
+
+			//点击节点触发点击事件
+			function zTreeOnClick(event, treeId, treeNode) {
+				$(".x-iframe").attr('src', 'tree_demo.html');
+//				pid = treeNode.id;
+//				var data = {
+//					"org.id": pid
+//				};
+//				var newNode = {
+//					name: "4级菜单",
+//					open,
+//					true,
+//					id: data,
+//					children: [{
+//						name: "三级菜单1"
+//					}]
+//				};
+//				zNodes.push(newNode);
+//				zTreeObj = $.fn.zTree.getZTreeObj($("#treeDemo"), setting, zNodes);
+			}
+
+			//出发事件获取当前节点id，添加子节点
+			function onClick(e, treeId, treeNode) {
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				var newNode = {
+					name: "newNode1"
+				};
+				newNode = zTreeObj.addNodes(treeNode, newNode);
+			}
+
+			$(document).ready(function() {
+				zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes); //初始化树形菜单
+			});
+
+			$(".btn").click(function() {
+
+			})
+		</script>
+
+	</body>
+
+</html>

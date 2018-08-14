@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/font.css" />
+		<link rel="stylesheet" href="../css/xadmin.css" />
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../lib/layui/layui.js"></script>
+		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
+		<script type="text/javascript" src="../js/xadmin.js"></script>
+		<link rel="stylesheet" href="../css/table.css" />
+		<title>数据库管理-sql编辑器</title>
+
+		<style>
+			
+			.sql_box{
+				padding: 20px 20px;
+				box-sizing: border-box;
+			}
+			
+			.layui-layer-title {
+				text-align: center;
+				padding: 0 20px 0 20px !important;
+			}
+			
+			.layui-input-block {
+				width: 95%;
+				margin-left: 0px;
+				float: left;
+			}
+			
+			.layui-lable {
+				width: 5%;
+				height: 100px;
+				line-height: 100px;
+				float: left;
+				text-align: center;
+			}
+			
+			.sql_table {
+				width: 100%;
+				overflow-y: scroll;
+				overflow-x: scroll;
+			}
+			
+			.count_box {
+				width: 100%;
+				margin-top: 15px;
+			}
+			
+			.count_box button {
+				border: none;
+				background: rgb(241, 248, 253);
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="sql_box">
+			<div class="layui-collapse" lay-accordion>
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">sql脚本编辑语句</h2>
+					<div class="layui-colla-content layui-show">
+						<div class="layui-form-item layui-form-text">
+							<div class="layui-input-block">
+								<textarea title="sql语句" name="desc" placeholder="请编写sql语句" class="layui-textarea"></textarea>
+							</div>
+							<div class="layui-lable">
+								<button class="layui-btn layui-btn-xs"><i class="icon iconfont">&#xe719;</i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-colla-item">
+					<h2 class="layui-colla-title">sql脚本查询语句</h2>
+					<div class="layui-colla-content">
+						<div class="layui-form-item layui-form-text">
+							<div class="layui-input-block">
+								<textarea title="sql语句" name="desc" placeholder="请编写sql语句" class="layui-textarea"></textarea>
+							</div>
+							<div class="layui-lable">
+								<button class="layui-btn layui-btn-xs"><i class="icon iconfont">&#xe719;</i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sql_table">
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th>
+								字段
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								暂时没有数据
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="count_box">
+				<button class="layui-btn layui-btn-primary">查询时间<span>0.5</span>s</button>
+				<button class="layui-btn layui-btn-primary">共<span>28</span>条</button>
+				<button class="layui-btn layui-btn-primary"><i class="icon iconfont">&#xe714;</i></button>
+			</div>
+		</div>
+
+	</body>
+
+</html>
