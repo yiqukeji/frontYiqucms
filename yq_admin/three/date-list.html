@@ -34,11 +34,13 @@
 			.btn_box {
 				margin-left: 15px;
 			}
-			.btn_group{
+			
+			.btn_group {
 				padding-left: 20px;
 				padding-top: 20px;
 			}
-			td a:hover{
+			
+			td a:hover {
 				text-decoration: underline;
 				color: #007DDB;
 			}
@@ -54,7 +56,6 @@
 				</div>
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 select_box1">
 					<select name="city" lay-verify="required">
-						<!--<option value=""></option>-->
 						<option value="0">本级</option>
 						<option value="1">全部</option>
 					</select>
@@ -96,10 +97,10 @@
 							<td>007</td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -113,10 +114,10 @@
 							<td>007</td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -130,11 +131,11 @@
 							<td>007</td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
+									<i class="layui-icon tests">&#xe640;</i>
 								</a>
 							</td>
 						</tr>
@@ -143,36 +144,104 @@
 			</form>
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
-					<button class="layui-btn layui-btn-sm">&emsp;新增&emsp;</button>
+					<button class="layui-btn layui-btn-sm" id="insert">&emsp;新增&emsp;</button>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
 				</div>
 			</div>
 		</div>
+		
+		<!--
+        	作者：270068451@qq.com
+        	时间：2018-08-15
+        	描述：弹窗
+        -->
+		<div id="tx" style="margin:auto;width: 400px;height: 520px;display: none;padding: 20px;border: 1px solid gainsboro;">
+			<form class="layui-form" action="" method="post">
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">上级</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input type="text" name="title" required lay-verify="required" placeholder="输入IP号" autocomplete="off" class="layui-input" disabled="disabled">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">名称</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="name" type="text" name="title" required lay-verify="required" placeholder="输入名称" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">英文</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="english" type="text" name="title" required lay-verify="required" placeholder="输入英文" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">编码</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="code" type="text" name="title" required lay-verify="required" placeholder="输入编码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">排序</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="paixu" type="text" name="title" required lay-verify="required" placeholder="排序" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">备注</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<textarea id="texts" name="texts" rows="5" cols="40"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">排查表</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input type="text" name="title" required lay-verify="required" placeholder="输入排查表，多个逗号隔开(非必录)" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item" style="font-size: 10px;text-align: center;">
+					排查表：删除此条数据时会去此表查询是否被占用(是:禁止删除)
+				</div>
+				<div class="layui-form-item" style="height: 60px;line-height: 60px;text-align: center;margin-top: 30px;border: 1px solid gainsboro;">
+					<a class="layui-btn layui-btn-sm layui-btn-normal insert">&emsp;保存&emsp;</a>
+					<a class="layui-btn layui-btn-sm layui-btn-danger close">&emsp;取消&emsp;</a>
+				</div>
+			</form>
+		</div>
 
-		<script>
-			$(function() {
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-
-					//执行一个laypage实例
-					laypage.render({
-						elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-							,
-						count: 50 //数据总数，从服务端得到
-					});
-				});
-				layui.use(['form', 'element'],
-					function() {
-						layer = layui.layer;
-						element = layui.element;
-					});
-				$(".test").click(function() {
-					layer.confirm('确认删除？', {
-						btn: ['确定']
-					})
-				});
+		<script type="text/javascript" src="../js/tab_show.js"></script>
+		<script type="text/javascript">
+			var tip;
+			$("#insert").click(function() {
+				tip = layer.open({
+					type: 1,
+					title: '编辑',
+					area:['460px','610px'],
+					content:$("#tx")
+				})
+			})
+			$(".insert").click(function(){
+				if($("#name").val().trim() == ""){
+					layer.alert("请输入名称");
+				}else if($("#english").val().trim() == ""){
+					layer.alert("请输入英文");
+				}else if($("#code").val().trim() == ""){
+					layer.alert("请输入编码");
+				}else if($("#paixu").val().trim() == ""){
+					layer.alert("请输入排序号");
+				}else if($("#texts").val().trim() == ""){
+					layer.alert("请输入备注信息");
+				}else{
+					//ajax
+					layer.msg("添加成功！");
+					layer.close(tip);
+				}
+			})
+			
+			$(".close").click(function(){
+				layer.close(tip);
 			})
 		</script>
 	</body>

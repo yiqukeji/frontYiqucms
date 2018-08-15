@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="../css/font.css" />
+		<link rel="stylesheet" href="../css/xadmin.css" />
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../lib/layui/layui.js"></script>
+		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
+		<script type="text/javascript" src="../js/xadmin.js"></script>
+		<link rel="stylesheet" href="../css/table.css" />
+
+		<link rel="stylesheet" href="../css/zTreeStyle/zTreeStyle.css" />
+		<script type="text/javascript" src="../js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
+		<script type="text/javascript" src="../js/jquery.ztree.excheck.js" ></script>
+		<title></title>
+	</head>
+
+	<body>
+
+		<div style="width:200px;height:auto;">
+			<div>
+				<ul class="ztree" id="treeDemo">
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			//用于展现 zTree 的 DOM 容器
+			var zTreeObj;
+			// zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
+			var setting = {
+				//树形图动作  
+				view: {
+					expandSpeed: "fast", //节点展开的速度  
+					selectedMulti: false, //设置是否允许同时选中多个节点。
+				},
+				check:{
+					enable:true,//这里设置是否显示复选框
+				},
+				//回调函数的设置  
+				callback: {
+					onClick: onClick, //点击事件，当点击当前节点，做的事情。
+				},
+				data:{
+					simpleData:{
+						enable:true,
+						idkey:'id',
+						pIdkey:'pid',
+						rootpId:'0'
+					}
+				}
+			};
+			// zTree 的数据属性，深入使用请参考 API 文档（zTreeNode 节点数据详解）
+			//异步添加节点可以设置为null
+			var zNodes = [{
+				name: "栏目",
+				id: 0,
+				title: "树形菜单",
+				children: [{
+					name: "一级菜单1",
+					children: [{
+						name: "一级菜单1.1"
+					}, {
+						name: "一级菜单1.2"
+					}]
+				}, {
+					name: "一级菜单2"
+				}]
+			}, {
+				name: "职务",
+				id: 1,
+				children: [{
+					name: "二级菜单1"
+				}, {
+					name: "二级菜单2"
+				}]
+			}, {
+				name: "地区",
+				id: 2,
+				children: [{
+					name: "三级菜单1"
+				}, {
+					name: "三级菜单2"
+				}]
+			}];
+
+			//出发事件获取当前节点id，添加子节点
+			function onClick(e, treeId, treeNode) {
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			}
+
+			$(document).ready(function() {
+				zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes); //初始化树形菜单
+			});
+		</script>
+	</body>
+
+</html>

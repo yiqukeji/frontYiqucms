@@ -112,31 +112,8 @@
 				</div>
 			</div>
 		</div>
+		
+		<script type="text/javascript" src="../js/tab_show.js" ></script>
 
-		<script>
-			$(function() {
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-
-					//执行一个laypage实例
-					laypage.render({
-						elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-							,
-						count: 50 //数据总数，从服务端得到
-					});
-				});
-				layui.use(['form', 'element'],
-					function() {
-						layer = layui.layer;
-						element = layui.element;
-					});
-				$(".test").click(function() {
-					layer.confirm('确认删除？', {
-						btn: ['确定']
-					})
-				});
-			})
-		</script>
 	</body>
-
 </html>

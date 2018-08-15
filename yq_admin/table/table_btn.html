@@ -68,10 +68,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -83,10 +83,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -98,10 +98,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -113,10 +113,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -128,10 +128,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -143,10 +143,10 @@
 							<td>toExcel</td>
 							<td>导出EXCEL</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit" onclick="tan()">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -156,13 +156,45 @@
 			</form>
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
-					<button class="layui-btn layui-btn-sm">&emsp;新增&emsp;</button>
-					<button class="layui-btn layui-btn-sm layui-btn-danger">&emsp;删除&emsp;</button>
+					<button class="layui-btn layui-btn-sm"  onclick="tan()">&emsp;新增&emsp;</button>
+					<button class="layui-btn layui-btn-sm layui-btn-danger" id="delete">&emsp;删除&emsp;</button>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
 				</div>
 			</div>
+		</div>
+
+		<div id="tx" style="margin: auto;width: 300px;height: 300px;display: none;padding: 20px;border: 1px solid gainsboro;">
+			<form class="layui-form" action="" method="post">
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">名称</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="ip" type="text" name="title" required lay-verify="required" placeholder="输入号" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">权限标识</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="cont" type="text" name="title" required lay-verify="required" placeholder="输入权限标识" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">备注</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="maret" type="text" name="title" required lay-verify="required" placeholder="输入备注信息" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">代码</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<textarea cols="26" rows="5" id="content"></textarea>
+					</div>
+				</div>
+				<div class="layui-form-item" style="text-align: center;margin-top: 30px;">
+					<a class="layui-btn layui-btn-sm insert">&emsp;保存&emsp;</a>
+				</div>
+			</form>
 		</div>
 
 		<script>
@@ -184,18 +216,17 @@
 						$(".che").attr("checked", "checked");
 						flag = true;
 					} else {
-						$(".che").removeAttr("checked","");
+						$(".che").removeAttr("checked", "");
 						flag = false;
 					}
 				})
-				
-								
+
 				var _index = 0;
 				$(document).on('click', '.test', function() {
 					_index = $(this).parent().parent().index();
 					layer.confirm('确认删除？', {
 						btn: ['确定'],
-						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
+						skin: 'myclass' //layui自定义弹窗类名，用于添加点击事件
 					})
 					console.log(_index);
 				});
@@ -205,7 +236,48 @@
 					$("#tabs tr").eq(_index).remove();
 				})
 				
+				$("#delete").click(function(){
+					layer.confirm('确认删除全部数据？', {
+						btn: ['确定'],
+						skin: 'delete' //layui自定义弹窗类名，用于添加点击事件
+					})
+				})
+				//删除全部列表数据
+				$(document).on('click', '.delete', function() {
+					layer.msg("删除全部数据")
+				})
+
+				//判断输入框是否输入
+				$(".insert").click(function(form) {
+					if($("#ip").val().trim() == "") {
+						layer.msg("名称不能为空");
+						return;
+					} else if($("#cont").val().trim() == "") {
+						layer.msg("请添加标识！");
+						return;
+					} else if($("#maret").val().trim() == "") {
+						layer.msg("备注信息不能为空");
+						return;
+					} else if($("#content").val().trim() == "") {
+						layer.msg("代码内容不能为空");
+						return;
+					} else {
+						layer.close(tip);
+					}
+				})
+
 			})
+
+			var tip = "";
+			function tan() {
+				tip = layer.open({
+					type: 1,
+					title: '新增按钮组',
+					width: "360px",
+					height: "460px",
+					content: $("#tx")
+				})
+			}
 		</script>
 	</body>
 
