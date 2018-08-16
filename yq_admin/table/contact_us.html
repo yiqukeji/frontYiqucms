@@ -44,33 +44,53 @@
 				<tbody>
 					<tr>
 						<td>电话</td>
-						<td>0851-88917178</td>
+						<td>
+							<input disabled="disabled" value="0851-88917178" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>邮箱</td>
-						<td>1027534788</td>
+						<td>
+							<input disabled="disabled" value="1027534788@qq.com" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>QQ</td>
-						<td>uploadFiles/uploadImgs/6/15329237833001073939128235_WB.png</td>
+						<td>
+							<input disabled="disabled" value="1027534788" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>微信</td>
-						<td>uploadFiles/uploadImgs/4/1532923771641884478285636_WX.jpg</td>
+						<td>
+							<input disabled="disabled" value="15761613294" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>地址</td>
-						<td>数字产业园</td>
+						<td>
+							<input disabled="disabled" value="数字产业园" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>操作</td>
 						<td>
-							<a class="layui-btn layui-btn-xs"><i class="icon iconfont">&#xe69e;</i></a>
+							<a class="layui-btn layui-btn-xs" id="update"><i class="icon iconfont">&#xe69e;</i></a>
+							<a class="layui-btn layui-btn-xs" id="save"><i class="icon iconfont">&#xe747;</i></a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		
+		<script>
+			$("#update").click(function(){
+				$("td").children("input").removeAttr("disabled");
+			})
+			$("#save").click(function(){
+				$("td").children("input").attr("disabled","disabled");
+			})
+		</script>
 		
 	</body>
 </html>

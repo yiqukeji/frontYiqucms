@@ -31,6 +31,41 @@
 				color: black;
 				text-align: center;
 			}
+			
+			.file {
+				width: 100%;
+				height: 36px;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			#text {
+				width: 85%;
+				float: left;
+				height: 36px;
+				cursor: pointer;
+			}
+			
+			#file {
+				width: 15%;
+				float: right;
+				overflow: hidden;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				opacity: 0;
+			}
+			
+			.upload {
+				width: 15%;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				background: #009688;
+				color: white;
+				float: left;
+			}
+			
 		</style>
 	</head>
 	<body>
@@ -43,47 +78,55 @@
 				<tbody>
 					<tr>
 						<td>网站名称</td>
-						<td>弈趣云创—中高端网站系统定制开发—大数据建站实践者</td>
+						<td>
+							<input disabled="disabled" value="弈趣云创—中高端网站系统定制开发—大数据建站实践者" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+						</td>
 					</tr>
 					<tr>
 						<td>标题</td>
-						<td>弈趣云创—中高端网站系统定制开发—大数据建站实践者</td>
+						<td><input disabled="disabled" value="弈趣云创—中高端网站系统定制开发—大数据建站实践者" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>关键词</td>
-						<td>弈趣云创、弈趣科技、网站开发、系统开发、益学弈趣</td>
+						<td><input disabled="disabled" value="弈趣云创、弈趣科技、网站开发、系统开发、益学弈趣" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>logo</td>
-						<td>http://localhost:8080/tw/uploadFiles/uploadImgs/20180320/0da49402ebcb490e80fe0a08b4197fc7.jpg</td>
+						<td>
+							<div class="file">
+								<input id="text" disabled="disabled" value="http://localhost:8080/tw/uploadFiles/uploadImgs/20180320/0da49402ebcb490e80fe0a08b4197fc7.jpg" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input">
+								<input id="file" type="file" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+								<a class="upload">上传</a>
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<td>电话</td>
-						<td>0851-88917178</td>
+						<td><input disabled="disabled" value="0851-88917178" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>邮箱</td>
-						<td>works_yiqu@163.com</td>
+						<td><input disabled="disabled" value="works_yiqu@163.com" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>邮编</td>
-						<td>550025</td>
+						<td><input disabled="disabled" value="550025" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>官网</td>
-						<td>http://www.yiqucloud.cn</td>
+						<td><input disabled="disabled" value="http://www.yiqucloud.cn" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>地址</td>
-						<td>贵州贵安数字经济产业园3号楼0409室</td>
+						<td><input disabled="disabled" value="贵州贵安数字经济产业园3号楼0409室" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>版权</td>
-						<td>Copyright(c)2018 弈趣云创. All Rights Reserved.</td>
+						<td><input disabled="disabled" value="Copyright(c)2018 弈趣云创. All Rights Reserved." type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>技术支持</td>
-						<td>弈趣科技</td>
+						<td><input disabled="disabled" value="弈趣科技" type="text" name="title" required  lay-verify="required" autocomplete="off" class="layui-input"></td>
 					</tr>
 					<tr>
 						<td>工信备案</td>
@@ -96,12 +139,28 @@
 					<tr>
 						<td>操作</td>
 						<td>
-							<a class="layui-btn layui-btn-xs"><i class="icon iconfont">&#xe69e;</i></a>
+							<a class="layui-btn layui-btn-xs" id="update"><i class="icon iconfont">&#xe69e;</i></a>
+							<a class="layui-btn layui-btn-xs" id="save"><i class="icon iconfont">&#xe747;</i></a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+		
+		<script>
+			$("#update").click(function(){
+				$("td").children("input").removeAttr("disabled");
+			})
+			$("#save").click(function(){
+				$("td").children("input").attr("disabled","disabled");
+			})
+			
+			//导入文件
+			$(document).change(function(){
+				var upload_file = $.trim($("#file").val()); //获取上传文件
+				$('#text').val(upload_file); //赋值给自定义input框
+			})
+		</script>
 		
 	</body>
 </html>

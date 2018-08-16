@@ -15,6 +15,11 @@
 		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
 		<script type="text/javascript" src="../js/xadmin.js"></script>
 		<link rel="stylesheet" href="../css/table.css" />
+
+		<link rel="stylesheet" href="../kindeditor-4.1.10/themes/default/default.css" />
+		<script type="text/javascript" src="../kindeditor-4.1.10/kindeditor-min.js" ></script>
+		<script type="text/javascript" src="../kindeditor-4.1.10/lang/zh_CN.js"></script>
+
 		<title>用户管理-会员管理</title>
 
 		<style>
@@ -39,9 +44,24 @@
 				padding-left: 20px;
 			}
 			
-			#vip_tab td{
-				padding: 5px 15px;
+			#vip_tab td {
+				padding: 5px;
 				box-sizing: border-box;
+			}
+			
+			.email_inupt {
+				width: 88%;
+				float: left;
+				display: inline-block;
+			}
+			
+			.email_btn {
+				display: inline-block;
+				width: 10%;
+				float: left;
+				height: 38px;
+				margin-left: 10px;
+				line-height: 38px;
 			}
 		</style>
 
@@ -123,18 +143,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -150,18 +170,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -177,18 +197,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -204,18 +224,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -231,18 +251,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -258,18 +278,18 @@
 							<td>2018-08-13</td>
 							<td>127.0.0.1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
 									<i class="icon iconfont">正常</i>
 								</a>
 							</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs email" lay-event="edit">
 									<i class="icon iconfont">&#xe69f;</i>
 								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -292,7 +312,7 @@
 		<!--
         	作者：270068451@qq.com
         	时间：2018-08-15
-        	描述：弹窗
+        	描述：修改用户信息弹窗
         -->
 		<div id="tx" style="margin:auto;width: 90%;height: 90%;display: none;padding: 5px 20px;border: 1px solid gainsboro;">
 			<form class="layui-form">
@@ -395,8 +415,48 @@
 				</table>
 			</form>
 		</div>
-		
-		<script type="text/javascript" src="../js/tab_show.js" ></script>
+		<!--
+        	作者：270068451@qq.com
+        	时间：2018-08-15
+        	描述：给用户发送邮件弹窗
+        -->
+		<div id="email" style="margin:auto;width: 95%;height: auto;display: none;padding: 5px;border: 1px solid gainsboro;">
+			<form class="layui-form">
+				<table class="layui-table">
+					<tbody id="vip_tab">
+						<tr>
+							<td>
+								<input title="填写多个邮箱地址请用 (;) 分开" type="text" name="title" required lay-verify="required" placeholder="请输入邮箱地址" autocomplete="off" class="layui-input email_inupt" disabled="disabled">
+								<a title="修改" class="layui-btn layui-btn-danger layui-btn-sm email_btn">
+									<i class="icon iconfont">&#xe69e;</i>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<textarea id="editor_id" name="content" style="width:750px;height:300px;"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="radio" name="sex" value="纯文本" title="纯文本" checked>
+								<input type="radio" name="sex" value="带标签" title="带标签">
+								<input type="checkbox" name="like[dai]" title="全体用户">
+								<a class="layui-btn layui-btn-sm layui-btn-normal">&emsp;发送&emsp;</a>
+								<a class="layui-btn layui-btn-sm layui-btn-danger" id="center">&emsp;取消&emsp;</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+
+		<script type="text/javascript" src="../js/tab_show.js"></script>
 		<script type="text/javascript">
 			var tip;
 			$("#insert,.update").click(function() {
@@ -409,12 +469,42 @@
 			})
 			$(".insert").click(function() {
 				layer.msg("添加成功！");
-//				layer.close(tip);
+				//				layer.close(tip);
 			})
 
 			$(".close").click(function() {
-				layer.close(tip);//执行弹窗关闭
+				layer.close(tip); //执行弹窗关闭
 			})
+
+			var flag = false;
+			$(".email_btn").click(function() {
+				if(flag == false) {
+					$(".email_inupt").removeAttr("disabled");
+					flag = true;
+				} else {
+					$(".email_inupt").attr("disabled", "disabled");
+					flag = false;
+				}
+			})
+
+			var tips;
+			$(".email").click(function() {
+				tips = layer.open({
+					type: 1,
+					title: '编辑',
+					area: ['800px', '555px'],
+					content: $("#email")
+				})
+			})
+			$("#center").click(function(){
+				layer.close(tips);
+			})
+		</script>
+
+		<script>
+			KindEditor.ready(function(K) {
+				window.editor = K.create('#editor_id');
+			});
 		</script>
 
 	</body>

@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
 		<script type="text/javascript" src="../js/xadmin.js"></script>
 		<link rel="stylesheet" href="../css/table.css" />
-		<title>系统管理-按钮管理</title>
+		<title>首页管理-轮播管理</title>
 
 		<style>
 			.sreach_box {
@@ -27,12 +27,56 @@
 			tr input {
 				cursor: pointer;
 			}
+			
+			.file {
+				width: 100%;
+				height: 36px;
+				border: 1px solid gainsboro;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			#text {
+				width: 85%;
+				float: left;
+				height: 36px;
+				cursor: pointer;
+			}
+			
+			#file {
+				width: 15%;
+				float: right;
+				overflow: hidden;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				opacity: 0;
+			}
+			
+			.upload {
+				width: 15%;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				background: #009688;
+				color: white;
+				float: left;
+			}
+			#tx label{
+				width: 50px !important;
+				border: 1px solid gainsboro;
+			}
+			
+			#tx .layui-form-item{
+				border: 1px solid gainsboro;
+				padding: 5px;
+			}
 		</style>
 	</head>
 
 	<body>
 		<blockquote class="layui-elem-quote shouye">
-			<a>首页&emsp;<span>/&emsp;系统管理</span><span>&emsp;/&emsp;按钮管理</span></a>
+			<a>首页&emsp;<span>/&emsp;首页管理</span><span>&emsp;/&emsp;轮播管理</span></a>
 		</blockquote>
 		<div class="sreach_box">
 			<input style="width: 200px;float: left;margin-right: 15px;" type="text" name="title" required lay-verify="required" placeholder="请输入搜索关键字" autocomplete="off" class="layui-input">
@@ -66,15 +110,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
 							<td>公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -82,15 +126,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
 							<td>公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -98,15 +142,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
 							<td>公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -114,15 +158,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
 							<td>公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -130,15 +174,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
-							<td>公司业务</td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
+							<td>222公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -146,15 +190,15 @@
 						<tr>
 							<td><input type="checkbox" class="che" /></td>
 							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif"/></td>
-							<td>公司业务</td>
+							<td><img src="../lib/layui/images/face/9.gif" /></td>
+							<td>111公司业务</td>
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a class="layui-btn layui-btn-xs" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -164,13 +208,64 @@
 			</form>
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
-					<button class="layui-btn layui-btn-sm">&emsp;新增&emsp;</button>
+					<button class="layui-btn layui-btn-sm" id="insert">&emsp;新增&emsp;</button>
 					<button class="layui-btn layui-btn-sm layui-btn-danger">&emsp;删除&emsp;</button>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
 				</div>
 			</div>
+		</div>
+
+		<!--
+        	作者：270068451@qq.com
+        	时间：2018-08-15
+        	描述：弹窗
+        -->
+		<div id="tx" style="margin:auto;width: 400px;height: 446px;display: none;padding: 20px;border: 1px solid gainsboro;">
+			<form class="layui-form" action="" method="post">
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="border:1px solid gainsboro;width: 60px;text-align: center;">标题:</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="name" type="text" name="title" required lay-verify="required" placeholder="输入标题" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">链接</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="english" type="text" name="title" required lay-verify="required" placeholder="输入链接" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">路径</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<div class="file">
+							<input id="text" type="text" name="title" required lay-verify="required" placeholder="上传文件地址" autocomplete="off" class="layui-input" disabled="disabled">
+							<input id="file" type="file" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+							<a class="upload">上传</a>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item" style="font-size: 10px;text-align: center;">
+					提示：在新闻动态里面添加一片文章作详情页，链接到那个文章
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">排序</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input id="paixu" type="number" name="title" required lay-verify="required" placeholder="排序" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label" style="width: 60px;text-align: center;">备注</label>
+					<div class="layui-input-block" style="margin-left: 90px;">
+						<input type="text" name="title" required lay-verify="required" placeholder="输入备注信息" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item" style="height: 60px;line-height: 60px;text-align: center;margin-top: 10px;border: 1px solid gainsboro;">
+					<a class="layui-btn layui-btn-sm layui-btn-normal insert">&emsp;保存&emsp;</a>
+					<a class="layui-btn layui-btn-sm layui-btn-danger close">&emsp;取消&emsp;</a>
+				</div>
+			</form>
 		</div>
 
 		<script>
@@ -192,18 +287,17 @@
 						$(".che").attr("checked", "checked");
 						flag = true;
 					} else {
-						$(".che").removeAttr("checked","");
+						$(".che").removeAttr("checked", "");
 						flag = false;
 					}
 				})
-				
-								
+
 				var _index = 0;
 				$(document).on('click', '.test', function() {
 					_index = $(this).parent().parent().index();
 					layer.confirm('确认删除？', {
 						btn: ['确定'],
-						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
+						skin: 'myclass' //layui自定义弹窗类名，用于添加点击事件
 					})
 					console.log(_index);
 				});
@@ -212,7 +306,47 @@
 				$(document).on('click', '.myclass', function() {
 					$("#tabs tr").eq(_index).remove();
 				})
-				
+
+			})
+		</script>
+
+		<script type="text/javascript">
+			var tip;
+			$("#insert").click(function() {
+				tip = layer.open({
+					type: 1,
+					title: '编辑',
+					area: ['460px', '540px'],
+					content: $("#tx")
+				})
+			})
+			$(".insert").click(function() {
+				if($("#name").val().trim() == "") {
+					layer.alert("请输入名称");
+				} else if($("#english").val().trim() == "") {
+					layer.alert("请输入英文");
+				} else if($("#code").val().trim() == "") {
+					layer.alert("请输入编码");
+				} else if($("#paixu").val().trim() == "") {
+					layer.alert("请输入排序号");
+				} else if($("#texts").val().trim() == "") {
+					layer.alert("请输入备注信息");
+				} else {
+					//ajax
+					layer.msg("添加成功！");
+					layer.close(tip);
+				}
+			})
+
+			$(".close").click(function() {
+				layer.close(tip);
+			})
+			
+			
+			//导入文件
+			$(document).change(function(){
+				var upload_file = $.trim($("#file").val()); //获取上传文件
+				$('#text').val(upload_file); //赋值给自定义input框
 			})
 		</script>
 	</body>

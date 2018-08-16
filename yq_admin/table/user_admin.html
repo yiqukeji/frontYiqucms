@@ -38,6 +38,41 @@
 				padding: 5px 15px;
 				box-sizing: border-box;
 			}
+			
+			.file {
+				width: 100%;
+				height: 36px;
+				border: 1px solid gainsboro;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			#text {
+				width: 85%;
+				float: left;
+				height: 36px;
+				cursor: pointer;
+			}
+			
+			#file {
+				width: 15%;
+				float: right;
+				overflow: hidden;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				opacity: 0;
+			}
+			
+			.upload {
+				width: 15%;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				background: #009688;
+				color: white;
+				float: left;
+			}
 		</style>
 
 	</head>
@@ -66,7 +101,7 @@
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 btn_box">
 					<button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe615;</i></button>
 					<button class="layui-btn layui-btn-normal"><i class="icon iconfont">&#xe71d;</i></button>
-					<button class="layui-btn layui-btn-normal"><i class="icon iconfont">&#xe828;</i></button>
+					<a class="layui-btn layui-btn-normal" onclick="data()"><i class="icon iconfont">&#xe714;</i></a>
 				</div>
 			</div>
 		</form>
@@ -321,6 +356,29 @@
 			</div>
 		</div>
 
+		<div id="Excel" style="margin:auto;width: 80%;height: 100px;display: none;padding: 20px;">
+			<table class="layui-table">
+				<tbody>
+					<tr>
+						<td>
+							<div class="file">
+								<input id="text" type="text" name="title" required lay-verify="required" placeholder="上传文件地址" autocomplete="off" class="layui-input" disabled="disabled">
+								<input id="file" type="file" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+								<a class="upload">上传</a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="layui-btn layui-btn-xs layui-btn-normal">导入</a>
+							<a class="layui-btn layui-btn-xs layui-btn-danger">取消</a>
+							<a class="layui-btn layui-btn-xs">下载模板</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
 		<script type="text/javascript" src="../js/tab_show.js"></script>
 		<script type="text/javascript">
 			var tip;
@@ -336,17 +394,17 @@
 				tip = layer.open({
 					type: 1,
 					title: '编辑',
-					skin:'layui-layer-molv',
+					skin: 'layui-layer-molv',
 					area: ['360px', '200px'],
 					content: $("#Info")
 				})
 			})
-			
+
 			$(".send").click(function() {
 				layer.msg("发送成功！");
 				layer.close(tip);
 			})
-			
+
 			$(".insert").click(function() {
 				layer.msg("添加成功！");
 				//layer.close(tip);
@@ -354,6 +412,24 @@
 
 			$(".close").click(function() {
 				layer.close(tip); //执行弹窗关闭
+			})
+
+			var tips;
+
+			function data() {
+				tips = layer.open({
+					type: 1,
+					title: 'EXCEL导入至数据库',
+					skin: 'layui-layer-molv',
+					area: ['360px', '200px'],
+					content: $("#Excel")
+				})
+			}
+			
+			//导入文件
+			$(document).change(function(){
+				var upload_file = $.trim($("#file").val()); //获取上传文件
+				$('#text').val(upload_file); //赋值给自定义input框
 			})
 		</script>
 	</body>

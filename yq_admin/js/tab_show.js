@@ -1,13 +1,14 @@
 $(function() {
 	//加载模块
-	layui.use(['form', 'element', 'laypage'],
+	layui.use(['form', 'element', 'laypage','upload'],
 		function() {
 			layer = layui.layer;
 			element = layui.element;
 			var laypage = layui.laypage;
+			var upload = layui.upload;
 			//执行一个laypage实例,分页模块
 			laypage.render({
-				elem: 'page', //注意，这里的 test1 是 ID，不用加 # 号
+				elem: 'page', //注意，这里的 page 是 ID，不用加 # 号
 				count: 50 //数据总数，从服务端得到
 			});
 		});
