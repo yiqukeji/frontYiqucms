@@ -72,10 +72,10 @@
 							<td>2018-08-08</td>
 							<td>13</td>
 							<td>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test1" lay-event="del">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test1" lay-event="del" onclick="yq_delete('黑名单','确认添加黑名单？')">
 									&emsp;加入黑名单&emsp;
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs delete" lay-event="del">
+								<a class="layui-btn layui-btn-danger layui-btn-xs delete" lay-event="del" onclick="yq_delete()">
 									<i class="icon iconfont">&#xe69d;</i>
 								</a>
 							</td>
@@ -86,7 +86,7 @@
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
 					<button class="layui-btn layui-btn-sm layui-btn-normal" onclick='window.location.href = "ip_addr.html" '>&emsp;访客统计&emsp;</button>
-					<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="x_admin_show('删除数据','确定要删除所选中的数据？','300','160')">
+					<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="yq_delete()">
 						<i class="icon iconfont">&#xe69d;</i>
 					</button>
 				</div>

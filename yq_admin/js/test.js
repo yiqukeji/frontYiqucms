@@ -34,16 +34,6 @@ function update_btns() {
 	});
 }
 
-function delete_btn() {
-	layer.confirm('确认删除？', {
-		btn: ['确定'],
-		skin: 'delete'
-	})
-	$(document).on('click', '.delete', function() {
-		layer.msg('已删除');
-	})
-}
-
 
 
 /*弹出层*/

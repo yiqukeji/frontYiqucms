@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
 		<script type="text/javascript" src="../js/xadmin.js"></script>
 		<link rel="stylesheet" href="../css/table.css" />
-		<title></title>
+		<title>菜单管理-添加栏目</title>
 
 		<style>
 			.form_box {
@@ -1009,6 +1009,7 @@
 		<script>
 			$(function(){
 				var tip;
+				//点击弹出图标框
 				$("#icon").click(function(){
 					tip = layer.open({
 						type: 1,
@@ -1020,12 +1021,8 @@
 				$(document).on('click', '.icon_lists li', function() {
 					var icon = $(this).children(".code").html();
 					$("#icon").val("&"+icon.substr(5,));//截取字符串，拼接成字体图标
+					$("#icon").focus();
 					layer.close(tip);
-				})
-				$(document).change(function() {
-					if($("#icon").val() != "") {
-						$("#icon").attr("disabled", "disabled");
-					}
 				})
 			})
 		</script>

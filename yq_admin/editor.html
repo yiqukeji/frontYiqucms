@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="kindeditor/kindeditor-min.js" ></script>
+		<script type="text/javascript" src="kindeditor/lang/zh_CN.js" ></script>
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<textarea id="editor_id" name="content" style="width:700px;height:280px;"></textarea>
+		
+		<script>
+			KindEditor.ready(function(K) {
+				window.editor = K.create('#editor_id');
+				var options = {
+					filterMode: true
+				};
+				var editor = K.create('textarea[name="content"]', options);
+			});
+		</script>
+	</body>
+
+</html>

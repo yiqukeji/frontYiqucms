@@ -115,90 +115,10 @@
 							<td></td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
+								<a class="layui-btn layui-btn-xs update" lay-event="edit">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif" /></td>
-							<td>公司业务</td>
-							<td></td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif" /></td>
-							<td>公司业务</td>
-							<td></td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif" /></td>
-							<td>公司业务</td>
-							<td></td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif" /></td>
-							<td>222公司业务</td>
-							<td></td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>28</td>
-							<td><img src="../lib/layui/images/face/9.gif" /></td>
-							<td>111公司业务</td>
-							<td></td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="edit">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
+								<a class="layui-btn layui-btn-danger layui-btn-xs" onclick="yq_delete()" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -209,7 +129,7 @@
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
 					<button class="layui-btn layui-btn-sm" id="insert">&emsp;新增&emsp;</button>
-					<button class="layui-btn layui-btn-sm layui-btn-danger">&emsp;删除&emsp;</button>
+					<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="yq_delete()">&emsp;删除&emsp;</button>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
@@ -267,52 +187,11 @@
 				</div>
 			</form>
 		</div>
-
-		<script>
-			$(function() {
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-
-					//执行一个laypage实例
-					laypage.render({
-						elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-							,
-						count: 50 //数据总数，从服务端得到
-					});
-				});
-
-				var flag = false;
-				$(".che_one").click(function() {
-					if(flag == false) {
-						$(".che").attr("checked", "checked");
-						flag = true;
-					} else {
-						$(".che").removeAttr("checked", "");
-						flag = false;
-					}
-				})
-
-				var _index = 0;
-				$(document).on('click', '.test', function() {
-					_index = $(this).parent().parent().index();
-					layer.confirm('确认删除？', {
-						btn: ['确定'],
-						skin: 'myclass' //layui自定义弹窗类名，用于添加点击事件
-					})
-					console.log(_index);
-				});
-
-				//删除当前列表数据
-				$(document).on('click', '.myclass', function() {
-					$("#tabs tr").eq(_index).remove();
-				})
-
-			})
-		</script>
-
+		
+		<script type="text/javascript" src="../js/tab_show.js" ></script>
 		<script type="text/javascript">
 			var tip;
-			$("#insert").click(function() {
+			$("#insert,.update").click(function() {
 				tip = layer.open({
 					type: 1,
 					title: '编辑',
@@ -320,6 +199,7 @@
 					content: $("#tx")
 				})
 			})
+			//添加数据
 			$(".insert").click(function() {
 				if($("#name").val().trim() == "") {
 					layer.alert("请输入名称");
@@ -337,12 +217,10 @@
 					layer.close(tip);
 				}
 			})
-
+			//关闭弹窗
 			$(".close").click(function() {
 				layer.close(tip);
 			})
-			
-			
 			//导入文件
 			$(document).change(function(){
 				var upload_file = $.trim($("#file").val()); //获取上传文件

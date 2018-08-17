@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="../lib/layui/css/layui.css" />
 		<script type="text/javascript" src="../js/xadmin.js"></script>
 		<link rel="stylesheet" href="../css/table.css" />
-		<title>系统管理-按钮管理</title>
+		<title>回收站</title>
 
 		<style>
 			.sreach_box {
@@ -32,7 +32,7 @@
 
 	<body>
 		<blockquote class="layui-elem-quote shouye">
-			<a>首页&emsp;<span>/&emsp;系统管理</span><span>&emsp;/&emsp;按钮管理</span></a>
+			<a>首页&emsp;<span>/&emsp;回收站</span><span>&emsp;/&emsp;数据操作</span></a>
 		</blockquote>
 		<div class="sreach_box">
 			<input style="width: 200px;float: left;margin-right: 15px;" type="text" name="title" required lay-verify="required" placeholder="请输入搜索关键字" autocomplete="off" class="layui-input">
@@ -68,85 +68,10 @@
 							<td>被移除</td>
 							<td>内容管理</td>
 							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
+								<a title="刷新" class="layui-btn layui-btn-xs test" lay-event="edit">
 									<i class="icon iconfont">&#xe6aa;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>2018-08-14</td>
-							<td>被移除</td>
-							<td>内容管理</td>
-							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
-									<i class="icon iconfont">&#xe6aa;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>2018-08-14</td>
-							<td>被移除</td>
-							<td>内容管理</td>
-							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
-									<i class="icon iconfont">&#xe6aa;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>2018-08-14</td>
-							<td>被移除</td>
-							<td>内容管理</td>
-							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
-									<i class="icon iconfont">&#xe6aa;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>2018-08-14</td>
-							<td>被移除</td>
-							<td>内容管理</td>
-							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
-									<i class="icon iconfont">&#xe6aa;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>2018-08-14</td>
-							<td>被移除</td>
-							<td>内容管理</td>
-							<td>
-								<a class="layui-btn layui-btn-xs test" lay-event="edit" id="test">
-									<i class="icon iconfont">&#xe6aa;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" id="test1">
+								<a title="删除" class="layui-btn layui-btn-danger layui-btn-xs" onclick="yq_delete()" lay-event="del">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -160,48 +85,27 @@
 				</div>
 			</div>
 		</div>
-
+		
+		
+		<script type="text/javascript" src="../js/tab_show.js" ></script>
 		<script>
-			$(function() {
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-
-					//执行一个laypage实例
-					laypage.render({
-						elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-							,
-						count: 50 //数据总数，从服务端得到
-					});
-				});
-
-				var flag = false;
-				$(".che_one").click(function() {
-					if(flag == false) {
-						$(".che").attr("checked", "checked");
-						flag = true;
-					} else {
-						$(".che").removeAttr("checked","");
-						flag = false;
-					}
-				})
-				
-								
-				var _index = 0;
-				$(document).on('click', '.test', function() {
-					_index = $(this).parent().parent().index();
-					layer.confirm('确认删除？', {
-						btn: ['确定'],
-						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
-					})
-					console.log(_index);
-				});
-
-				//删除当前列表数据
-				$(document).on('click', '.myclass', function() {
-					$("#tabs tr").eq(_index).remove();
-				})
-				
-			})
+//			$(function() {
+//				var _index = 0;
+//				$(document).on('click', '.test', function() {
+//					_index = $(this).parent().parent().index();
+//					layer.confirm('确认删除？', {
+//						btn: ['确定'],
+//						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
+//					})
+//					console.log(_index);
+//				});
+//
+//				//删除当前列表数据
+//				$(document).on('click', '.myclass', function() {
+//					$("#tabs tr").eq(_index).remove();
+//				})
+//				
+//			})
 		</script>
 	</body>
 

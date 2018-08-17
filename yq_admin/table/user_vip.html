@@ -16,10 +16,6 @@
 		<script type="text/javascript" src="../js/xadmin.js"></script>
 		<link rel="stylesheet" href="../css/table.css" />
 
-		<link rel="stylesheet" href="../kindeditor-4.1.10/themes/default/default.css" />
-		<script type="text/javascript" src="../kindeditor-4.1.10/kindeditor-min.js" ></script>
-		<script type="text/javascript" src="../kindeditor-4.1.10/lang/zh_CN.js"></script>
-
 		<title>用户管理-会员管理</title>
 
 		<style>
@@ -63,6 +59,45 @@
 				margin-left: 10px;
 				line-height: 38px;
 			}
+			
+			textarea {
+				display: block;
+			}
+			
+			.file {
+				width: 100%;
+				height: 36px;
+				border: 1px solid gainsboro;
+				cursor: pointer;
+				position: relative;
+			}
+			
+			#text {
+				width: 85%;
+				float: left;
+				height: 36px;
+				cursor: pointer;
+			}
+			
+			#file {
+				width: 15%;
+				float: right;
+				overflow: hidden;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				opacity: 0;
+			}
+			
+			.upload {
+				width: 15%;
+				height: 36px;
+				text-align: center;
+				line-height: 36px;
+				background: #009688;
+				color: white;
+				float: left;
+			}
 		</style>
 
 	</head>
@@ -94,8 +129,8 @@
 				</div>
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4 btn_box">
 					<button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe615;</i></button>
-					<button class="layui-btn layui-btn-normal"><i class="icon iconfont">&#xe71d;</i></button>
-					<button class="layui-btn layui-btn-normal"><i class="icon iconfont">&#xe714;</i></button>
+					<a class="layui-btn layui-btn-normal" onclick="data()"><i class="icon iconfont">&#xe71d;</i></a>
+					<a class="layui-btn layui-btn-normal"><i class="icon iconfont">&#xe714;</i></a>
 				</div>
 			</div>
 		</form>
@@ -154,142 +189,7 @@
 								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>xiehonglun</td>
-							<td>路人甲</td>
-							<td>中级会员</td>
-							<td>2018-08-13</td>
-							<td>2</td>
-							<td>2018-08-13</td>
-							<td>127.0.0.1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
-									<i class="icon iconfont">正常</i>
-								</a>
-							</td>
-							<td>
-								<a class="layui-btn layui-btn-xs email" lay-event="edit">
-									<i class="icon iconfont">&#xe69f;</i>
-								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>xiehonglun</td>
-							<td>路人甲</td>
-							<td>中级会员</td>
-							<td>2018-08-13</td>
-							<td>2</td>
-							<td>2018-08-13</td>
-							<td>127.0.0.1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
-									<i class="icon iconfont">正常</i>
-								</a>
-							</td>
-							<td>
-								<a class="layui-btn layui-btn-xs email" lay-event="edit">
-									<i class="icon iconfont">&#xe69f;</i>
-								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>xiehonglun</td>
-							<td>路人甲</td>
-							<td>中级会员</td>
-							<td>2018-08-13</td>
-							<td>2</td>
-							<td>2018-08-13</td>
-							<td>127.0.0.1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
-									<i class="icon iconfont">正常</i>
-								</a>
-							</td>
-							<td>
-								<a class="layui-btn layui-btn-xs email" lay-event="edit">
-									<i class="icon iconfont">&#xe69f;</i>
-								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>xiehonglun</td>
-							<td>路人甲</td>
-							<td>中级会员</td>
-							<td>2018-08-13</td>
-							<td>2</td>
-							<td>2018-08-13</td>
-							<td>127.0.0.1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
-									<i class="icon iconfont">正常</i>
-								</a>
-							</td>
-							<td>
-								<a class="layui-btn layui-btn-xs email" lay-event="edit">
-									<i class="icon iconfont">&#xe69f;</i>
-								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" class="che" /></td>
-							<td>1</td>
-							<td>xiehonglun</td>
-							<td>路人甲</td>
-							<td>中级会员</td>
-							<td>2018-08-13</td>
-							<td>2</td>
-							<td>2018-08-13</td>
-							<td>127.0.0.1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs layui-btn-radius" lay-event="edit">
-									<i class="icon iconfont">正常</i>
-								</a>
-							</td>
-							<td>
-								<a class="layui-btn layui-btn-xs email" lay-event="edit">
-									<i class="icon iconfont">&#xe69f;</i>
-								</a>
-								<a class="layui-btn layui-btn-xs update" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
+								<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" onclick="yq_delete()">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -301,7 +201,7 @@
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
 					<button class="layui-btn layui-btn-sm" id="insert">&emsp;新增&emsp;</button>
 					<button class="layui-btn layui-btn-sm layui-btn-normal">&emsp;批量发送&emsp;</button>
-					<button class="layui-btn layui-btn-sm layui-btn-danger test">&emsp;删除&emsp;</button>
+					<button class="layui-btn layui-btn-sm layui-btn-danger" onclick="yq_delete()">&emsp;删除&emsp;</button>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
@@ -439,7 +339,7 @@
 						</tr>
 						<tr>
 							<td>
-								<textarea id="editor_id" name="content" style="width:750px;height:300px;"></textarea>
+								<iframe src="../editor.html" width="720px" height="310px" style="border: none;"></iframe>
 							</td>
 						</tr>
 						<tr>
@@ -454,6 +354,30 @@
 					</tbody>
 				</table>
 			</form>
+		</div>
+		
+		
+		<div id="Excel" style="margin:auto;width: 80%;height: 100px;display: none;padding: 20px;">
+			<table class="layui-table">
+				<tbody>
+					<tr>
+						<td>
+							<div class="file">
+								<input id="text" type="text" name="title" required lay-verify="required" placeholder="上传文件地址" autocomplete="off" class="layui-input" disabled="disabled">
+								<input id="file" type="file" name="title" required lay-verify="required" autocomplete="off" class="layui-input">
+								<a class="upload">上传</a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a class="layui-btn layui-btn-xs layui-btn-normal">导入</a>
+							<a class="layui-btn layui-btn-xs layui-btn-danger">取消</a>
+							<a class="layui-btn layui-btn-xs">下载模板</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 
 		<script type="text/javascript" src="../js/tab_show.js"></script>
@@ -496,17 +420,10 @@
 					content: $("#email")
 				})
 			})
-			$("#center").click(function(){
+			$("#center").click(function() {
 				layer.close(tips);
 			})
 		</script>
-
-		<script>
-			KindEditor.ready(function(K) {
-				window.editor = K.create('#editor_id');
-			});
-		</script>
-
 	</body>
 
 </html>

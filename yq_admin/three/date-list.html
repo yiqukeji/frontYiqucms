@@ -97,45 +97,11 @@
 							<td>007</td>
 							<td>1</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
+								<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del" onclick="yq_delete()">
 									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>
-								<a href="javaScript:;"><i class="layui-icon layui-icon-release"></i>&nbsp;职务</a>
-							</td>
-							<td>Jeck</td>
-							<td>007</td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>1</td>
-							<td>
-								<a href="javaScript:;"><i class="layui-icon layui-icon-release"></i>&nbsp;地区</a>
-							</td>
-							<td>Jeck</td>
-							<td>007</td>
-							<td>1</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del">
-									<i class="layui-icon tests">&#xe640;</i>
 								</a>
 							</td>
 						</tr>
@@ -213,8 +179,9 @@
 
 		<script type="text/javascript" src="../js/tab_show.js"></script>
 		<script type="text/javascript">
+			//弹出框
 			var tip;
-			$("#insert").click(function() {
+			$("#insert,.update").click(function() {
 				tip = layer.open({
 					type: 1,
 					title: '编辑',
@@ -222,6 +189,8 @@
 					content:$("#tx")
 				})
 			})
+			
+			//验证信息是否填写完整
 			$(".insert").click(function(){
 				if($("#name").val().trim() == ""){
 					layer.alert("请输入名称");
@@ -240,6 +209,7 @@
 				}
 			})
 			
+			//关闭弹窗
 			$(".close").click(function(){
 				layer.close(tip);
 			})

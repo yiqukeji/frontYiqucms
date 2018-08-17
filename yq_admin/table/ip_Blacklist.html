@@ -92,70 +92,10 @@
 							<td>备注信息</td>
 							<td>2018-08-09</td>
 							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
+								<a class="layui-btn layui-btn-xs update" lay-event="del">
 									<i class="layui-icon">&#xe642;</i>
 								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" class="test1">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checked[]" class="che" value='' /></td>
-							<td>2</td>
-							<td>127.0.0.1</td>
-							<td>备注信息</td>
-							<td>2018-08-09</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test test1" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checked[]" class="che" value='' /></td>
-							<td>3</td>
-							<td>127.0.0.1</td>
-							<td>备注信息</td>
-							<td>2018-08-09</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test test1" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checked[]" class="che" value='' /></td>
-							<td>4</td>
-							<td>127.0.0.1</td>
-							<td>备注信息</td>
-							<td>2018-08-09</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test test1" lay-event="del">
-									<i class="layui-icon">&#xe640;</i>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td><input type="checkbox" name="checked[]" class="che" value='' /></td>
-							<td>5</td>
-							<td>127.0.0.1</td>
-							<td>备注信息</td>
-							<td>2018-08-09</td>
-							<td>
-								<a class="layui-btn layui-btn-xs" lay-event="del">
-									<i class="layui-icon">&#xe642;</i>
-								</a>
-								<a class="layui-btn layui-btn-danger layui-btn-xs test" lay-event="del" class="test1">
+								<a class="layui-btn layui-btn-danger layui-btn-xs test" onclick="yq_delete()" lay-event="del" class="test1">
 									<i class="layui-icon">&#xe640;</i>
 								</a>
 							</td>
@@ -166,7 +106,7 @@
 			<div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
 				<div class="layui-col-xs4 layui-col-sm4 layui-col-md4">
 					<a class="layui-btn layui-btn-sm" id="insert">&emsp;新增&emsp;</a>
-					<a class="layui-btn layui-btn-sm layui-btn-danger testAll">&emsp;删除&emsp;</a>
+					<a class="layui-btn layui-btn-sm layui-btn-danger" onclick="yq_delete()">&emsp;删除&emsp;</a>
 				</div>
 				<div class="layui-col-xs8 layui-col-sm8 layui-col-md8">
 					<div id="page" style="float: right;"></div>
@@ -192,17 +132,22 @@
 				</div>
 			</form>
 		</div>
+		
+		
+		<script type="text/javascript" src="../js/tab_show.js" ></script>
 		<script>
 			$(function() {
-
+				//添加个修改弹窗
 				var tip = "";
-				$("#insert").click(function() {
+				$("#insert,.update").click(function() {
 					tip = layer.open({
 						type: 1,
 						title: '新增黑名单',
 						content: $("#tx")
 					})
 				})
+				
+				//获取时间
 				var myDate = new Date();
 				var year = myDate.getFullYear(); //获取当前年份   
 				var mon = myDate.getMonth() + 1; //获取当前月份   
@@ -210,9 +155,10 @@
 				var h = myDate.getHours(); //获取小时   
 				var m = myDate.getMinutes(); //获取分钟   
 				var s = myDate.getSeconds(); //获取秒
-				//拼接字符串，将得到的时间拼接起来
+				//拼接字符串
 				var dates = year + "-" + mon + "-" + da + " " + h + ":" + m + ":" + s;
-
+				
+				//数据添加
 				$(".insert").click(function(form) {
 					var myIp = $("#ip").val();
 					if(myIp.match(/[\x01-\xFF]*/) == false) {
@@ -226,59 +172,22 @@
 						layer.close(tip);
 					}
 				})
-
-				layui.use('laypage', function() {
-					var laypage = layui.laypage;
-
-					//执行一个laypage实例
-					laypage.render({
-						elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
-							,
-						count: 50 //数据总数，从服务端得到
-					});
-				});
-
-				layui.use(['form', 'element'],
-					function() {
-						layer = layui.layer;
-						element = layui.element;
-					});
 				
-				
-				var _index = 0;
-				var myindex = _index;
-				$(document).on('click', '.test', function() {
-					_index = $(this).parent().parent().index();
-					layer.confirm('确认删除？', {
-						btn: ['确定'],
-						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
-					})
-					console.log(_index);
-				});
+//				var _index = 0;
+//				var myindex = _index;
+//				$(document).on('click', '.test', function() {
+//					_index = $(this).parent().parent().index();
+//					layer.confirm('确认删除？', {
+//						btn: ['确定'],
+//						skin:'myclass'//layui自定义弹窗类名，用于添加点击事件
+//					})
+//					console.log(_index);
+//				});
 
 				//删除当前列表数据
-				$(document).on('click', '.myclass', function() {
-					$("#tabs tr").eq(_index).remove();
-				})
-				
-				var che = document.getElementsByName("checked[]");
-				var che_all = document.getElementById("che_all");
-				$(document).on('click', '#che_all', function() {
-					for(var i=0;i<che.length;i++){
-						che[i].checked = che_all.checked;
-					}
-				})
-				
-				$(document).on('click', '.testAll', function() {
-					layer.confirm('确认删除？', {
-						btn: ['确定'],
-						skin:'delete_all'//layui自定义弹窗类名，用于添加点击事件
-					})
-				});
-				//删除全部列表数据
-				$(document).on('click', '.delete_all', function() {
-					layer.msg("删除全部数据");
-				})
+//				$(document).on('click', '.myclass', function() {
+//					$("#tabs tr").eq(_index).remove();
+//				})
 			})
 		</script>
 	</body>
